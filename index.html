@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Intake Tracker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="brand">💧 WaterTrack</div>
+        <div class="nav-links">
+            <a href="#" class="active">Home</a>
+            <a href="#set-goals">Set Goals</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#contact">Contact</a>
+            <a href="#about">About</a>
+        </div>
+        <button class="menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <main class="main-content">
+        <div class="hero-section">
+            <div class="illustration">
+                <img src="water-bottle.png" alt="Water Bottle" class="bottle-img">
+            </div>
+            <div class="hero-text">
+                <h1>TRACK YOUR DAILY<br>WATER INTAKE<br>WITH US.</h1>
+                <p>This website allows users to keep daily track of their water intake, motivate them to drink water and stay hydrated and remind them to consume water.</p>
+            </div>
+                </div>        <div class="tracker-card">
+            <div class="daily-goal-section" id="set-goals">
+                <h3>DAILY GOAL</h3>
+                <div class="goal-input">
+                    <input type="number" id="daily-goal" value="2000" min="0" step="100">
+                    <button class="set-goal-btn">SET GOAL</button>
+                </div>
+            </div>
+
+            <div class="progress-section">
+                <div class="progress-bar">
+                    <div class="progress" id="progress-fill"></div>
+                </div>
+                <span class="progress-text">0/2000 ml</span>
+            </div>
+
+            <div class="add-water-section">
+                <h3>ADD WATER</h3>
+                <div class="water-buttons">
+                    <button class="water-btn" data-amount="100">
+                        <span class="emoji">🥤</span>
+                        <span>100 ml</span>
+                    </button>
+                    <button class="water-btn" data-amount="200">
+                        <span class="emoji">🥤</span>
+                        <span>200 ml</span>
+                    </button>
+                    <button class="water-btn" data-amount="300">
+                        <span class="emoji">🥤</span>
+                        <span>300 ml</span>
+                    </button>
+                    <button class="water-btn" data-amount="500">
+                        <span class="emoji">🥤</span>
+                        <span>500 ml</span>
+                    </button>
+                </div>
+            </div>
+
+            <button class="reset-btn">
+                <span class="emoji">🔄</span>
+                Reset Progress
+            </button>
+        </div>
+
+        <div class="reviews-section" id="reviews">
+            <h2>What Our Users Say</h2>
+            <div class="reviews-container">
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-avatar">👤</div>
+                        <div class="reviewer-info">
+                            <h4>Sarah Johnson</h4>
+                            <div class="rating">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                    <p class="review-text">"This app has completely changed my hydration habits! The progress tracking is so motivating, and I love getting notifications when I reach my goal."</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-avatar">👤</div>
+                        <div class="reviewer-info">
+                            <h4>Mike Chen</h4>
+                            <div class="rating">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                    <p class="review-text">"Simple, effective, and beautifully designed. I've tried many water tracking apps, but this one stands out for its ease of use."</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-avatar">👤</div>
+                        <div class="reviewer-info">
+                            <h4>Emma Davis</h4>
+                            <div class="rating">⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                    <p class="review-text">"The daily goal setting feature is fantastic! It helps me stay accountable and maintain my hydration goals consistently."</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-section" id="contact">
+            <h2>Get In Touch</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="emoji">📧</span>
+                        <h4>Email</h4>
+                        <p>support@watertrack.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <span class="emoji">📱</span>
+                        <h4>Phone</h4>
+                        <p>+1 (555) 123-4567</p>
+                    </div>
+                    <div class="contact-item">
+                        <span class="emoji">📍</span>
+                        <h4>Location</h4>
+                        <p>123 Hydration Street<br>Wellness City, WC 12345</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html> 
