@@ -51,6 +51,35 @@ body {
     background: linear-gradient(135deg, var(--light-blue) 0%, #BBDEFB 100%);
     min-height: 100vh;
 }
+/* Scroll Animation Classes */
+.scroll-hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity var(--transition-speed) var(--transition-ease),
+                transform var(--transition-speed) var(--transition-ease);
+}
+
+.scroll-hidden.left {
+    transform: translateX(-50px);
+}
+
+.scroll-hidden.right {
+    transform: translateX(50px);
+}
+
+.scroll-hidden.zoom {
+    transform: scale(0.9);
+}
+
+.scroll-show {
+    opacity: 1;
+    transform: translate(0) scale(1) !important;
+}
+
+body {
+    background: linear-gradient(to right, #7fcfee, #ffffff);
+    min-height: 100vh;
+}
 
 /* Navbar Styles */
 .navbar {
