@@ -118,6 +118,7 @@ const UI = {
         }, CONSTANTS.BUTTON_ANIMATION_DELAY);
     }
 };
+
 // Form Management
 const ContactForm = {
     validateForm(formData) {
@@ -196,6 +197,53 @@ function handleReset() {
 function toggleMobileMenu() {
     UI.elements.navLinks()?.classList.toggle('show');
 }
+
+// Scroll Animation
+const ScrollAnimation = {
+    init() {
+        // Add initial classes
+        const elements = document.querySelectorAll('.hero-section, .tracker-card, .reviews-section, .contact-section, .about-section');
+        elements.forEach(el => {
+            el.classList.add('scroll-hidden');
+            if (el.classList.contains('hero-section')) {
+                el.classList.add('left');
+            } else if (el.classList.contains('tracker-card')) {
+                el.classList.add('zoom');
+            }
+        });
+
+        // Add classes to review cards for alternating animations
+        const reviewCards = document.querySelectorAll('.review-card');
+        reviewCards.forEach((card, index) => {
+            card.classList.add('scroll-hidden');
+            card.classList.add(index % 2 === 0 ? 'left' : 'right');
+        });
+
+        // Add classes to feature items for staggered animations
+        const featureItems = document.querySelectorAll('.feature-item');
+        featureItems.forEach((item, index) => {
+            item.classList.add('scroll-hidden');
+            item.classList.add(index % 2 === 0 ? 'left' : 'right');
+            item.style.transitionDelay = `${index * 0.1}s`;
+        });
+
+        // Create and configure the Intersection Observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('scroll-show');
+                }
+            });
+        }, {
+            threshold: 0.2,
+            rootMargin: '0px'
+        });
+
+        // Observe all hidden elements
+        document.querySelectorAll('.scroll-hidden').forEach(el => observer.observe(el));
+    }
+};
+
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     WaterState.load();
