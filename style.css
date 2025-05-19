@@ -47,10 +47,7 @@ html {
     --text-2xl: 2.5rem;
     --text-3xl: 3rem;
 }
-body {
-    background: linear-gradient(135deg, var(--light-blue) 0%, #BBDEFB 100%);
-    min-height: 100vh;
-}
+
 /* Scroll Animation Classes */
 .scroll-hidden {
     opacity: 0;
@@ -164,7 +161,7 @@ body {
 
 /* Tracker Card Styles */
 .tracker-card {
-    background: var(--primary);
+    background: linear-gradient(to top, var(--dark-blue),#00a7bd);
     border-radius: 20px;
     padding: 2rem;
     color: var(--white);
@@ -303,6 +300,7 @@ body {
 .reset-btn .emoji {
     font-size: 1.2rem;
 }
+
 /* Reviews Section Styles */
 .reviews-section {
     margin: 4rem 0;
@@ -539,6 +537,7 @@ body {
 .submit-btn:hover {
     transform: translateY(-2px);
 }
+
 /* Media Queries */
 @media (max-width: 968px) {
     .hero-section {
