@@ -86,6 +86,8 @@ body {
     align-items: center;
     justify-content: space-between;
     box-shadow: var(--shadow-sm);
+    position: relative;
+    z-index: 1000;
 }
 
 .brand {
@@ -148,9 +150,10 @@ body {
 
 .hero-text h1 {
     color: var(--dark-blue);
-    font-size: 3rem;
+    font-size: 4rem;
     line-height: 1.2;
     margin-bottom: 1.5rem;
+    font-weight: 700;
 }
 
 .hero-text p {
@@ -160,6 +163,11 @@ body {
 }
 
 /* Tracker Card Styles */
+h2{
+    color: var(--dark-blue);
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
 .tracker-card {
     background: linear-gradient(to top, var(--dark-blue),#00a7bd);
     border-radius: 20px;
@@ -547,23 +555,29 @@ body {
     }
     
     .hero-text h1 {
-        font-size: 2.5rem;
+        font-size: 3.5rem;
     }
     
     .nav-links {
         display: none;
-    }
-    
-    .nav-links.show {
-        display: flex;
-        flex-direction: column;
         position: absolute;
         top: 100%;
         left: 0;
         right: 0;
         background: var(--white);
         padding: 1rem;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        box-shadow: var(--shadow-sm);
+        z-index: 999;
+        width: 100%;
+    }
+    
+    .nav-links.show {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+        animation: slideDown 0.3s ease forwards;
     }
     
     .menu-btn {
@@ -573,6 +587,9 @@ body {
         background: none;
         border: none;
         cursor: pointer;
+        padding: 0.5rem;
+        z-index: 1001;
+        position: relative;
     }
     
     .menu-btn span {
@@ -581,6 +598,22 @@ body {
         height: 3px;
         background: var(--dark-blue);
         transition: 0.3s;
+        pointer-events: none;
+    }
+    
+    .menu-btn:hover span {
+        background: var(--primary);
+    }
+    
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
     
     .contact-container {
@@ -607,7 +640,7 @@ body {
     }
     
     .hero-text h1 {
-        font-size: 2rem;
+        font-size: 3rem;
     }
 }
 
